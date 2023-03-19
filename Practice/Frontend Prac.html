@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+        <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-content: center;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size:auto;
+    align-content: center;
+    background-image: linear-gradient(to right top, #d1cbf9, #bfbbf9, #aaabf9, #929cf9, #768ef9, #6883fb, #5978fd, #496dff, #5960ff, #6c4fff, #8038fd, #9403f7);	
+
+}
+.wrapper{
+   
+    margin: auto;
+    padding: 30% 30%;
+
+}
+.pricing-table{
+    background-color: white;
+   box-shadow: 0px 0px 18px #ccc;
+   text-align: center;
+   padding: 30px 0px;
+   border-radius: 5px;
+   position: relative;
+ 
+}
+.pricing-table .head {
+    border-bottom:1px solid #eee;
+    padding-bottom: 50px;
+    transition: all 0.5s ease;
+}
+.pricing-table:hover .head{
+   border-bottom:1px solid #8E2DE2;
+   
+}
+
+.pricing-table .head .title{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pricing-table .content .price{
+    background:linear-gradient(to right, #8E2DE2 0%, #4A00E0 100%);
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    line-height: 90px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 10px #ccc;
+    margin-top: -50px;
+     transition: all 0.5s ease;
+}
+.pricing-table:hover .content .price{
+    transform: scale(1.2);
+ 
+}
+.pricing-table .content .price h1{
+    color:#fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+.pricing-table .content ul{
+   list-style-type: none;
+   margin-bottom: 20px;
+   padding-top: 10px;
+}
+
+.pricing-table .content ul li{
+    margin: 20px 0px;
+    font-size: 14px;
+    color:#555;
+}
+
+.pricing-table .content .sign-up{
+    background:linear-gradient(to right, #8E2DE2 0%, #4A00E0 100%);
+    border-radius: 40px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+
+.pricing-table .btn {
+  color: #fff;
+  padding: 14px 40px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3 linear;
+  transition: all 0.3 linear;
+  border: none;
+  font-size: 14px;
+  text-transform: capitalize;
+  position: relative;
+  text-decoration: none;
+    margin: 2px;
+    z-index: 9999;
+    text-decoration: none;
+    border-radius:50px;
+ 
+}
+
+.pricing-table .btn:hover{
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-table .btn.bordered {
+  z-index: 50;
+  color: #333;
+}
+.pricing-table:hover .btn.bordered{
+  color:#fff !important;
+}
+
+.pricing-table .btn.bordered:after {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 50px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3 linear;
+  transition: all 0.3 linear;
+  width: 100%;
+  z-index: -1;  
+  -webkit-transform:scale(1);
+  -moz-transform:scale(1);
+  transform:scale(1);
+}
+.pricing-table:hover .btn.bordered:after{
+  opacity:0;
+  transform:scale(0);
+}
+
+@media screen and (max-width:768px){
+   .wrapper{
+        grid-template-columns: repeat(2,1fr);
+    } 
+}
+
+@media screen and (max-width:600px){
+   .wrapper{
+        grid-template-columns: 1fr;
+    } 
+}
+
+
+{box-sizing: border-box;}
+
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid  linear-gradient(to right, #8e2de2, #8023e1, #7119e1, #600de0, #4a00e0);
+  z-index: 9;
+  border-radius: 5px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  max-height: auto;
+  padding: 10px;
+  background-image: linear-gradient(to right, #8e2de2, #8023e1, #7119e1, #600de0, #4a00e0);}
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* sumbit button */
+.form-container .btn {
+  background-image: linear-gradient(to right, #a9fc90, #8ceb73, #6ed955, #4bc835, #15b702);  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* cancle button */
+
+.form-container .cancel{
+    background-image: linear-gradient(to right, #ffb9c7, #ff97a6, #ff747e, #ff4d51, #ff1919);
+    
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+        </style>
+    </head>
+    <body>
+
+
+        <div class="wrapper">
+            <div class="pricing-table gprice-single" align="center">
+                <div class="head" align="center">
+                     <h4 class="title">Iconic subscription</h4> 
+                </div>
+                <div class="content" align="center">
+                    <div class="price" align="center">
+                        <h1>$999</h1>
+                    </div>
+                    <ul type="button">
+                      <li>1:1 Live mentorship</li>
+                        <li>Live doubt solving</li>
+                        <li>Best Online Guidance</li>
+                        <li>Increased Convenience and Flexibility</li>
+                        <li>Doubt resolution and personalised learning</li>
+                        <li> <del>Physical notes</del> </li>
+                        
+        
+                    </ul>
+                    <div class="sign-up">
+                        <a href="#" class="btn bordered radius" onclick="openForm()">Signup Now</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="form-popup" id="myForm">
+              <form action="/action_page.php" class="form-container">
+                <h1>Login</h1>
+            
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form>
+            </div>
+            <script>
+              function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+            </script>
+    </body>
+</html>
